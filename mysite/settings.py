@@ -52,10 +52,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        # Method 1 for adding templates to a general folder
+        # 'DIRS': [BASE_DIR / 'templates'],
+
+        # Method 2
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

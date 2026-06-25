@@ -19,5 +19,5 @@ def about_view(request):
 #     return HttpResponse('<h1>Contact Page</h1>')
 
 def contact_view(request):
-    return render(request, 'contact.html') # => request کاربر
+    return render(request, 'website/contact.html') # => request کاربر
 

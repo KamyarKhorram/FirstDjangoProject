@@ -16,9 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Path ('url address', 'view', name)
     path('', include('website.urls')), # => Home Page (void page referring to Home Page
     path('website/', include('website.urls'))
 ]
+
+# Seving static files during development
+# قراره static هایی رو داشته باشم که url اش توی فایل settings.py تعریف شده
+# static ('static' , 'base / static')
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# Serving files uploaded by a user during development
+# دسترسی به فایل media ایجاد شد
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

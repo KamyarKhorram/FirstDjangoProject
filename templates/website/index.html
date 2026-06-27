@@ -1,4 +1,6 @@
-<!doctype html>
+<!-- static function -->
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Index</title>
     <!-- Managing static root (the most simple way) -->
-    <link rel="stylesheet" href="static/test.css"
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
 </head>
 <body>
     <h1>index</h1>

@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Path ('url address', 'view', name)
     path('', include('website.urls')), # => Home Page (void page referring to Home Page
-    path('website/', include('website.urls'))
+    path('website/', include('website.urls')),
+    path('blog/', include('blog.urls'))
 ]
 
 # Seving static files during development

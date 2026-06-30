@@ -38,7 +38,7 @@
                             <li><a href="#">Lifestyle</a></li>
                         </ul>
                         <div class="user-details row">
-                            <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span
+                            <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">{{author}}</a> <span
                                     class="lnr lnr-user"></span></p>
                             <p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span
                                     class="lnr lnr-calendar-full"></span></p>
@@ -55,24 +55,16 @@
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
-                        <h3 class="mt-20 mb-20">Astronomy Binoculars A Great Alternative</h3>
+                        <h3 class="mt-20 mb-20">{{title}}</h3>
                         <p class="excert">
                             MCSE boot camps have its supporters and its detractors. Some people do not understand why
                             you should have to spend money on boot camp when you can get the MCSE study materials
                             yourself at a fraction.
                         </p>
                         <p>
-                            Boot camps have its supporters and its detractors. Some people do not understand why you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a fraction of the camp price. However, who has the willpower to actually sit through a
-                            self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
+                            {{content}}
                         </p>
-                        <p>
-                            Boot camps have its supporters and its detractors. Some people do not understand why you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a fraction of the camp price. However, who has the willpower to actually sit through a
-                            self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
-                        </p>
+
                     </div>
                     <div class="col-lg-12">
                         <div class="quotes">
@@ -236,21 +228,25 @@
                     <form>
                         <div class="form-group form-inline">
                             <div class="form-group col-lg-6 col-md-12 name">
-                                <input class="form-control" id="name" onblur="this.placeholder = 'Enter Name'" onfocus="this.placeholder = ''"
+                                <input class="form-control" id="name" onblur="this.placeholder = 'Enter Name'"
+                                       onfocus="this.placeholder = ''"
                                        placeholder="Enter Name" type="text">
                             </div>
                             <div class="form-group col-lg-6 col-md-12 email">
-                                <input class="form-control" id="email" onblur="this.placeholder = 'Enter email address'" onfocus="this.placeholder = ''"
+                                <input class="form-control" id="email" onblur="this.placeholder = 'Enter email address'"
+                                       onfocus="this.placeholder = ''"
                                        placeholder="Enter email address"
                                        type="email">
                             </div>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" id="subject" onblur="this.placeholder = 'Subject'" onfocus="this.placeholder = ''"
+                            <input class="form-control" id="subject" onblur="this.placeholder = 'Subject'"
+                                   onfocus="this.placeholder = ''"
                                    placeholder="Subject" type="text">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control mb-10" name="message" onblur="this.placeholder = 'Messege'" onfocus="this.placeholder = ''"
+                            <textarea class="form-control mb-10" name="message" onblur="this.placeholder = 'Messege'"
+                                      onfocus="this.placeholder = ''"
                                       placeholder="Messege" required=""
                                       rows="5"></textarea>
                         </div>
@@ -262,7 +258,8 @@
                 <div class="widget-wrap">
                     <div class="single-sidebar-widget search-widget">
                         <form action="#" class="search-form">
-                            <input name="search" onblur="this.placeholder = 'Search Posts'" onfocus="this.placeholder = ''" placeholder="Search Posts"
+                            <input name="search" onblur="this.placeholder = 'Search Posts'"
+                                   onfocus="this.placeholder = ''" placeholder="Search Posts"
                                    type="text">
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
@@ -389,7 +386,8 @@
                                         <div class="input-group-text"><i aria-hidden="true" class="fa fa-envelope"></i>
                                         </div>
                                     </div>
-                                    <input class="form-control" id="inlineFormInputGroup" onblur="this.placeholder = 'Enter email'"
+                                    <input class="form-control" id="inlineFormInputGroup"
+                                           onblur="this.placeholder = 'Enter email'"
                                            onfocus="this.placeholder = ''" placeholder="Enter email"
                                            type="text">
                                 </div>

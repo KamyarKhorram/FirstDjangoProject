@@ -9,7 +9,10 @@ class Post(models.Model):
     # tag
     # category
     counted_views=models.IntegerField(default=0)
-    status=models.BooleanField(default=False)
-    published_date=models.DateTimeField(null=True)
+    status=models.BooleanField(default=False) # field always has a value, starts as False if not provided
+    published_date=models.DateTimeField(null=True) # this field is allowed to be empty
     created_date=models.DateTimeField(auto_now_add=True)
     updated_date=models.DateTimeField(auto_now=True)
+
+    def __str__(self): # str dunder method: returns a readable string representation of the object
+        return " {} - {} ".format(self.title, self.id)

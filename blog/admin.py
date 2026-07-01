@@ -1,3 +1,6 @@
 from django.contrib import admin
+# from blog.models import Post
+from .models import Post
 
 # Register your models here.
+admin.site.register(Post) # makes Post model visible in Django admin panel

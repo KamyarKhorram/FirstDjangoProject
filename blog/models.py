@@ -13,6 +13,10 @@ class Post(models.Model):
     published_date=models.DateTimeField(null=True) # this field is allowed to be empty
     created_date=models.DateTimeField(auto_now_add=True)
     updated_date=models.DateTimeField(auto_now=True)
-
+    class Meta:
+        ordering=['-created_date']
+        # verbose_name='پست'
+        # verbose_name_plural='پست ها'
     def __str__(self): # str dunder method: returns a readable string representation of the object
-        return " {} - {} ".format(self.title, self.id)
+        # return " {} - {} ".format(self.title, self.id)
+        return f" {self.title} - {self.id} "

@@ -16,7 +16,7 @@ class PostAdmin(admin.ModelAdmin):
     list_filter=("status",) # adds a filter sidebar by status field
 
     # ordering = ("created_date",)  # ascending  => oldest post first
-    ordering=("-created_date",) # sorts by created_date descending (newest first)
+    # ordering=("-created_date",) # sorts by created_date descending (newest first)
 
     search_fields=("title", "content") # enables search box filtering by title and content
 

@@ -5,9 +5,9 @@ app_name='blog'
 
 urlpatterns=[
     path('', blog_view, name='index'),
-    path('single', blog_single, name='single'),
-
-    """
+    path('<int:pid>', blog_single, name='single')
+]
+"""
     path('<str:name>/lastname/<str:family_name>/age/<int:age>',
     # dynamic URL patterns with three dynamic segments:
     # <str:name>          => captures a string, passed to view as 'name'
@@ -21,12 +21,11 @@ urlpatterns=[
     name='test'
     # name of this URL pattern, used for reverse URL lookups (e.g. {% url 'test' %})
     )
-    """
-    
-    """
+"""
+
+"""
     path('post-<int:pid>', test, name='post-test'),
     # URL pattern with a literal prefix "post-" followed by a dynamic integer segment
     # <int:pid>  => captures an integer, passed to the view as 'pid'
     # example match: /post-5  =>  pid=5
-    """
-]
+"""

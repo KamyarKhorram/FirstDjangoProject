@@ -9,11 +9,11 @@ class PostAdmin(admin.ModelAdmin):
 
     empty_value_display='-empty-' # shows this text when a field has no value
 
-    list_display=("title", "counted_views", "status", "published_date", "created_date") # columns shown in the list view
+    list_display=("title", "author", "counted_views", "status", "published_date", "created_date") # columns shown in the list view
 
     # fields = ("title",) # limits which fields appear in the edit form
 
-    list_filter=("status",) # adds a filter sidebar by status field
+    list_filter=("status", "author") # adds a filter sidebar by status field
 
     # ordering = ("created_date",)  # ascending  => oldest post first
     # ordering=("-created_date",) # sorts by created_date descending (newest first)

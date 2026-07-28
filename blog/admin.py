@@ -1,6 +1,6 @@
 from django.contrib import admin
-# from blog.models import Post
-from .models import Post
+# from blog.models import Post, Category
+from .models import Post, Category
 
 # Register your models here.
 @admin.register(Post) # decorator alternative to admin.site.register()
@@ -20,4 +20,9 @@ class PostAdmin(admin.ModelAdmin):
 
     search_fields=("title", "content") # enables search box filtering by title and content
 
-# admin.site.register(Post, PostAdmin) # makes Post model visible in Django admin panel
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display=("name",)
+
+# admin.site.register(Category) # makes Category model visible in Django admin panel
+# admin.site.register(Post, PostAdmin)

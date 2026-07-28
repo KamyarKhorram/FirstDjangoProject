@@ -2,6 +2,17 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+class Category(models.Model):
+    name=models.CharField(max_length=255)
+
+    class Meta:
+        ordering=['-created_date']
+        verbose_name='Category'
+        verbose_name_plural='Categories'
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     image=models.ImageField(upload_to='blog/', default='blog/default.jpg')
 
@@ -16,7 +27,7 @@ class Post(models.Model):
 
     # tag
 
-    # category
+    category=models.ManyToManyField('Category')
 
     counted_views=models.IntegerField(default=0)
     status=models.BooleanField(default=False) # field always has a value, starts as False if not provided
@@ -25,8 +36,6 @@ class Post(models.Model):
     updated_date=models.DateTimeField(auto_now=True)
     class Meta:
         ordering=['-created_date']
-        # verbose_name='پست'
-        # verbose_name_plural='پست ها'
     def __str__(self): # str dunder method: returns a readable string representation of the object
         # return " {} - {} ".format(self.title, self.id)
         return f" {self.title} - {self.id} "

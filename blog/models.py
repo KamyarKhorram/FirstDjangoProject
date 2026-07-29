@@ -7,7 +7,7 @@ class Category(models.Model):
     name=models.CharField(max_length=255)
 
     class Meta:
-        ordering=['-created_date']
+        ordering=['name']
         verbose_name='Category'
         verbose_name_plural='Categories'
     def __str__(self):

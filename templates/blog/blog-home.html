@@ -93,24 +93,23 @@
                     <div class="col-lg-3  col-md-3 meta-details">
                         <ul class="tags">
 
-                            {% comment %}
-                            <!-- Method 1: loop through categories manually, wrap each in an <li> with a link -->
+                            <!-- Method 1 (recommended): loop through categories, each one clickable -->
                             {% for cat in post.category.all %}
-                            <li><a href="#">{{cat.name}}</a></li>,
+                            <li><a href="#">{{cat.name}}</a></li>
+                            {% if not forloop.last %},{% endif %}
                             {% endfor %}
 
-                            {% endcomment %}
-
-                            <!-- Method 2 (recommended, simpler): join all category names into one string separated by ", " -->
+                            {% comment %}
+                            <!-- Method 2: simpler, but categories aren't clickable -->
                             {{post.category.all|join:", "}}
+                            {% endcomment %}
 
                         </ul>
                         <div class="user-details row">
 
                             <!-- displays only the author's first name via a custom field -->
-                            <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">{{post.author.firstname}}</a>
-                                <span
-                                        class="lnr lnr-user"></span></p>
+                            <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">{{post.author.first_name}}</a>
+                                <span class="lnr lnr-user"></span></p>
 
                             {% comment %}
                             <!-- alternative: uses Django's built-in User.get_full_name() method, which returns "first_name last_name" together -->
@@ -119,7 +118,7 @@
                                         class="lnr lnr-user"></span></p>
                             {% endcomment %}
 
-                            <p class="date col-lg-12 col-md-12 col-6"><a href="#">{{post.published_date}}</a> <span
+                            <p class="date col-lg-12 col-md-12 col-6"><a href="#">{{post.published_date|date:"D d M Y"}}</a> <span
                                     class="lnr lnr-calendar-full"></span></p>
                             <p class="view col-lg-12 col-md-12 col-6"><a href="#">{{post.counted_views}}</a> <span
                                     class="lnr lnr-eye"></span></p>
